@@ -1,0 +1,48 @@
+<!-- 
+File name:  index.ejs
+Author:     Luis Grijalva 100719475 
+            Steven Mitchell 100506443
+Date:       4/4/2020 
+-->
+
+<!-- Top Components -->
+<%- include ./partials/head.ejs %>
+<%- include ./partials/header.ejs %>
+
+
+<!-- Content Area -->
+<main class="container" id="mainContent">
+
+    <% if (title == 'Home') { %>
+
+    <%- include ./content/home.ejs %>
+
+    <% } else if(title == 'About') { %>
+
+    <%- include ./content/about.ejs %>
+
+    <!-- Added projects page -->
+
+    <% } else if(title == 'Projects') { %>
+
+    <%- include ./content/projects.ejs %>
+
+    <!-- Added services page -->
+
+    <% } else if(title == 'Services') { %>
+
+    <%- include ./content/services.ejs %>
+
+    <% } else if(title == 'Contact') { %>
+
+    <%- include ./content/contact.ejs %>
+
+    <% } %>
+
+</main>
+
+
+<!-- Bottom components -->
+<%- include ./partials/scripts.ejs %>
+<%- include ./partials/footer.ejs %>
+<%- include ./partials/bottom.ejs %>
