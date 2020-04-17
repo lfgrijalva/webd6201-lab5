@@ -37,7 +37,16 @@ Date:       4/4/2020
 
     <%- include ./content/contact.ejs %>
 
-    <% } %>
+    <% } else if(title == 'Login') { %>
+
+    <% include ./content/login.ejs %>
+
+    <%} else if(title == 'Register') { %>
+        
+    <% include ./content/register.ejs %>
+
+    <%} %>
+
 
 </main>
 
