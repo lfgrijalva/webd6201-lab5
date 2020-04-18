@@ -1,9 +1,94 @@
-<%- include ../partials/head.ejs %>
-<% include ../partials/header.ejs %>
+<!-- File name:  addedit.ejs
+Author:     Luis Grijalva 100719475 
+            Steven Mitchell 100506443
+Date:       4/17/2020  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel='stylesheet' href='../../../public/Content/app.css' />
+</head>
+<style>
+    body {background-image: url("../Assets/gotham.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;}
+  </style>
+</style>
+<body>
+    
+
+<header id="mainHeader">
+    <!-- Main Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="../../../public/Assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        WEBD6201 - Lab 4
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <% if(title == 'Home') { %>
+          <li id="home" class="nav-item active">
+            <% } else { %>
+          <li id="home" class="nav-item">
+            <% } %>
+            <a class="nav-link" href="/home"><i class="fas fa-igloo"></i> Home</a></li>
+  
+  
+          <% if(title == 'Projects') { %>
+          <li id="projects" class="nav-item active">
+            <% } else { %>
+          <li id="projects" class="nav-item">
+            <% } %>
+            <a class="nav-link" href="/projects"><i class="fas fa-map"></i> Projects</a></li>
+  
+          <% if(title == 'Services') { %>
+          <li id="services" class="nav-item active">
+            <% } else { %>
+          <li id="services" class="nav-item">
+            <% } %>
+            <a class="nav-link" href="/services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+  
+  
+          <% if(title == 'About') { %>
+          <li id="about" class="nav-item active">
+            <% } else { %>
+          <li id="about" class="nav-item">
+            <% } %>
+            <a class="nav-link" href="/about"><i class="fas fa-info-circle"></i> About Me</a></li>
+  
+          <% if(title == 'Contact') { %>
+          <li id="contact" class="nav-item active">
+            <% } else { %>
+          <li id="contact" class="nav-item">
+            <% } %>
+            <a class="nav-link" href="/contact"><i class="fas fa-mobile-alt"></i> Contact Me</a></li>
+  
+          <% if (typeof displayName == 'string' && displayName) { %>
+          <li class="navbar-text"> <i class="fas fa-lg- fa-user"></i>Welcome, <%= displayName %></li>
+          <li class="nav-item"><a href="/logout" class="nav-link"><i class="fas fa-lg fa-sign-out-alt"></i>Logout</a></li>
+          <% }else{ %>
+            <li id="login" class="nav-item"></li> <a class="nav-link" href="/login"><i class="fas sign-in-alt"></i> Login</a></li>
+  
+          <% }%>
+  
+      </div>
+    </nav>
+  </header>
 
 <div class="container">
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
+            <div class="jumbotron" >
             <h1><%= title %> Contact</h1>
 
             <form action="" class="form" method="POST">
@@ -43,12 +128,23 @@
                     <i class="fas fa-undo"> Cancel</i></a>
 
             </form>
+            </div>
             
         </div>
     </div>
 </div>
 
 <!-- Bottom components -->
-<%- include ../partials/scripts.ejs %>
-<%- include ../partials/footer.ejs %>
-<%- include ../partials/bottom.ejs %>
+<!-- SCRIPT SECTION -->
+<!-- 3rd Party Libraries -->
+<script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Scripts -->
+<script src="../../../Scripts/app.js"></script>
+<footer id="mainFooter">
+    <nav class="navbar fixed-bottom navbar-dark" style="background: transparent;">
+        <h4 class="display-6" >&copy; CopyRight 2020.</h4>
+    </nav>
+</footer>
+</body>
+</html>
